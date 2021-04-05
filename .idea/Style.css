@@ -1,0 +1,23 @@
+body{
+    background: gray;
+    margin-left: 40%;
+}
+h1{
+    font-family: "Corbel Light";
+    color: white;
+}
+button{
+    font-family: "Corbel Light";
+    background: forestgreen;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 140px;
+}
+span{
+    color: white;
+    font-family: "Corbel Light";
+    font-weight: bold;
+}
+

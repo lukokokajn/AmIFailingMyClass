@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lídl předpovídač známky</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div>
+    <h1>Lídl předpovídač známky</h1>
+</div>
+<script>
+
+    // Button //
+
+    var NewInput = document.createElement('button');
+    NewInput.innerHTML = "Přidat známku";
+    document.body.appendChild(NewInput);
+
+    NewInput.addEventListener("click", function () {
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+
+        var label = document.createElement('span');
+        label.innerHTML = "Známka:";
+        document.body.appendChild(label);
+
+        var input = document.createElement('input');
+        document.body.appendChild(input);
+
+        var label2 = document.createElement('span');
+        label2.innerHTML = "Váha:";
+        document.body.appendChild(label2);
+
+        var input2 = document.createElement('input');
+        document.body.appendChild(input2);
+    });
+
+
+    
+    var Average = document.createElement('button');
+    Average.innerHTML = "Calculate Average";
+   
+    document.body.appendChild(Average);
+    
+    Average.addEventListener("click", function () {
+
+        // Výpočet //
+
+        var znamka = 0;
+        var vaha = 0;
+        
+        var cisla = document.getElementsByTagName('input');
+        
+        for (let i = 0; i < cisla.length; i = i + 2) {  
+            znamka = znamka + parseInt(cisla[i].value) * parseInt(cisla[i + 1].value);
+            vaha = vaha + parseInt(cisla[i + 1].value);
+        }
+        var konecnaznamka = znamka / vaha;
+
+        var mistonaznamku = document.createElement('div');
+        mistonaznamku.innerHTML = konecnaznamka.toString() + '%';
+        document.body.appendChild(mistonaznamku);
+
+        var propadas = document.createElement('div');
+        propadas.innerHTML = "Projdeš ?"
+        document.body.appendChild(propadas);
+
+        var mistonazpravu = document.createElement('div');
+
+        if (konecnaznamka < 40) {
+            mistonazpravu.innerHTML = "NE"
+        } else {
+            mistonazpravu.innerHTML = "ANO"
+        }
+        document.body.appendChild(mistonazpravu);
+    });
+
+    // Napsání //
+
+    var div = document.createElement('div');
+    document.body.appendChild(div);
+
+    var label = document.createElement('span');
+    label.innerHTML = "Známka:";
+    document.body.appendChild(label);
+
+    var input = document.createElement('input');
+    document.body.appendChild(input);
+
+    var label2 = document.createElement('span');
+    label2.innerHTML = "Váha:";
+    document.body.appendChild(label2);
+
+    var input2 = document.createElement('input');
+    document.body.appendChild(input2);
+
+</script>
+</body>
+</html>
